@@ -1,0 +1,22 @@
+{
+  "name": "e2e-testing-workshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtj-devops/e2e-testing-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtj-devops/e2e-testing-workshop/issues"
+  },
+  "homepage": "https://github.com/vtj-devops/e2e-testing-workshop#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0"
+  }
+}
