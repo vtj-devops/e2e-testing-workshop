@@ -20,15 +20,18 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
+      - name: Install dependencies (docs)
+        working-directory: docs
         run: npm ci
-      - name: Build website
+      - name: Build website (docs)
+        working-directory: docs
         run: npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          # Upload the built site from the docs subdirectory in the monorepo
+          path: docs/build
 
   deploy:
     name: Deploy to GitHub Pages
