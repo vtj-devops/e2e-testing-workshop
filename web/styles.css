@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: #f6f8fb; margin: 0; color: #111; }
+.app { max-width: 640px; margin: 40px auto; padding: 16px; }
+header h1 { font-size: 18px; margin: 0 0 12px; }
+.card { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 6px 18px rgba(20,30,60,0.06); }
+label { display:block; margin-bottom: 10px; font-size: 14px; }
+input { width:100%; padding:8px 10px; margin-top:6px; border:1px solid #dfe6f0; border-radius:6px; }
+button { padding:8px 12px; background:#0b72ff; color:white; border:none; border-radius:6px; cursor:pointer; }
+button.secondary { background:#e0e6f5; color:#0b3b83; }
+.error { color:#b00020; margin:8px 0; }
+.hint { margin-top:10px; color:#5b6b86; font-size:13px; }
+.secret { background:#0b2b3b; color:#cde; padding:8px; border-radius:6px; }
+footer { margin-top:14px; text-align:center; color:#6b7280; }

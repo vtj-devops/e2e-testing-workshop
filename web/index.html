@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple React Login (E2E workshop)</title>
+    <link rel="stylesheet" href="styles.css" />
+  <!-- React + ReactDOM + Babel (開発用・CDN)。Babel はブラウザ上で TSX をトランスパイルします（開発用）。 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+  <!-- アプリ本体（TypeScript/TSX） -->
+  <script type="text/babel" data-presets="react,typescript" src="src/app.tsx"></script>
+  </body>
+</html>

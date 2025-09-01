@@ -1,0 +1,13 @@
+{
+  "name": "e2e-workshop-web",
+  "version": "1.0.0",
+  "description": "Simple static server for E2E workshop",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT"
+}
