@@ -1,0 +1,8 @@
+{
+  "label": "レッスン",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "E2E テスト自動化の基礎を学ぶ"
+  }
+}
