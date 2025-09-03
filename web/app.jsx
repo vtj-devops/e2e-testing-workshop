@@ -28,6 +28,7 @@ function Login({ onLogin }) {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             aria-label="username"
+            data-testid="username-input"
             required
           />
         </label>
@@ -38,6 +39,7 @@ function Login({ onLogin }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-label="password"
+            data-testid="password-input"
             required
           />
         </label>
