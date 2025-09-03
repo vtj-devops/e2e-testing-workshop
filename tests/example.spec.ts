@@ -16,3 +16,9 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+// // 意図的に失敗させるテスト（ワークショップ用）
+// test('intentional failure', async () => {
+//   // 期待値をわざと間違えてテストを失敗させる
+//   expect(1 + 1).toBe(3);
+// });
