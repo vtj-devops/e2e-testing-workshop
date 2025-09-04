@@ -15,15 +15,16 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  // For a GitHub Pages project site (owner: vtj-devops, repo: e2e-testing-workshop)
+  url: 'https://vtj-devops.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // For GitHub Pages project sites, this should be '/<repo-name>/'
+  baseUrl: '/e2e-testing-workshop/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // Update these to match your GitHub owner/repo so `docusaurus deploy` works.
+  organizationName: 'vtj-devops', // GitHub org/user name.
+  projectName: 'e2e-testing-workshop', // Repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
