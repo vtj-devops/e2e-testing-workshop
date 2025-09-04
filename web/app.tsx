@@ -38,6 +38,7 @@ function Login({ onLogin }: { onLogin: (u: User) => void }) {
             value={username}
             onChange={(e: any) => setUsername(e.target.value)}
             aria-label="username"
+            data-testid="username-input"
             required
           />
         </label>
@@ -48,11 +49,12 @@ function Login({ onLogin }: { onLogin: (u: User) => void }) {
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
             aria-label="password"
+            data-testid="password-input"
             required
           />
         </label>
         {error && <div className="error" role="alert">{error}</div>}
-        <button type="submit">ログイン</button>
+  <button type="submit" data-testid="login-button">ログイン</button>
       </form>
   <div className="hint">デモ用アカウント: 管理者 <strong>admin</strong> / 一般ユーザー <strong>user</strong>（パスワードはいずれも <strong>password</strong>）</div>
     </div>
@@ -76,12 +78,12 @@ function Dashboard({ user, onLogout }: { user: NonNullable<User>; onLogout: () =
         </div>
       )}
 
-      <button onClick={() => setSecretVisible((s: boolean) => !s)}>
+      <button data-testid="toggle-secret" onClick={() => setSecretVisible((s: boolean) => !s)}>
         {secretVisible ? '秘密を隠す' : '秘密を表示'}
       </button>
       {secretVisible && <pre className="secret">シークレットデータ: 42-SECRET</pre>}
       <div style={{ marginTop: '12px' }}>
-        <button className="secondary" onClick={onLogout}>ログアウト</button>
+        <button className="secondary" data-testid="logout-button" onClick={onLogout}>ログアウト</button>
       </div>
     </div>
   );
@@ -97,7 +99,7 @@ function AdminUserListToggle() {
 
   return (
     <div>
-      <button className="danger" onClick={() => setVisible(v => !v)}>
+      <button className="danger" data-testid="toggle-user-list" onClick={() => setVisible(v => !v)}>
         {visible ? 'ユーザー一覧を隠す' : 'ユーザー一覧を表示'}
       </button>
       {visible && (
