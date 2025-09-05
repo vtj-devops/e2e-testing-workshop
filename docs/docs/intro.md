@@ -15,19 +15,19 @@ Playwright を用いた E2E テストのワークショップにご関心をお�
 
 ## 準備
 
-- Node.js がインストールされていること（ [インストール](docs/docs/installation.md) を参照）
+ - Node.js がインストールされていること（ [インストール](installation.md) を参照）
 - Git で本リポジトリをクローンしていること
 
 ## これからの流れ
 
 ワークショップはいくつかのステップに分けて進行します。各ステップの目的を押さえながら進めてください。
 
-- テスト用Webアプリの起動: 別ターミナルで `web/` のローカルサーバを起動し、画面の操作方法（[テスト用Webアプリの起動](docs/docs/start-web.md)）
-- Playwrightコマンドの基本: `tests/` にあるサンプルを実行し、Playwrightの基本操作を学ぶ（[Playwrightコマンドの基本操作](docs/docs/start-test.md)）
-- レッスン1: テストを実行してレポートを見る（[レッスン1](docs/docs/lessons/lesson_01.md)）
-- レッスン2: UIモードで選んで実行する([レッスン2](docs/docs/lessons/lesson_02.md))
-- レッスン3: テスト対象アプリを起動する([レッスン3](docs/docs/lessons/lesson_03.md))
-- レッスン4: テスト対象にアクセスする([レッスン4](docs/docs/lessons/lesson_04.md))
-- レッスン5: フォームに値を入力してログインする([レッスン5](docs/docs/lessons/lesson_05.md))
-- レッスン6: 複数アカウントを管理する([レッスン6](docs/docs/lessons/lesson_06.md))
-- レッスン7: CIでPlaywrightテストを自動実行する([レッスン7](docs/docs/lessons/lesson_07.md))
+ - テスト用Webアプリの起動: 別ターミナルで `web/` のローカルサーバを起動し、画面の操作方法（[テスト用Webアプリの起動](start-web.md)）
+ - Playwrightコマンドの基本: `tests/` にあるサンプルを実行し、Playwrightの基本操作を学ぶ（[Playwrightコマンドの基本操作](start-test.md)）
+ - レッスン1: テストを実行してレポートを見る（[レッスン1](lessons/lesson_01.md)）
+ - レッスン2: UIモードで選んで実行する([レッスン2](lessons/lesson_02.md))
+ - レッスン3: テスト対象アプリを起動する([レッスン3](lessons/lesson_03.md))
+ - レッスン4: テスト対象にアクセスする([レッスン4](lessons/lesson_04.md))
+ - レッスン5: フォームに値を入力してログインする([レッスン5](lessons/lesson_05.md))
+ - レッスン6: 複数アカウントを管理する([レッスン6](lessons/lesson_06.md))
+ - レッスン7: CIでPlaywrightテストを自動実行する([レッスン7](lessons/lesson_07.md))
