@@ -4,13 +4,9 @@ sidebar_position: 6
 
 # レッスン 6: 複数アカウントを管理する
 
-このレッスンでは、複数アカウント（例: 管理者と一般ユーザー）を扱う方法をまとめます。主に Playwright の storageState を使って認証状態を保存・再利用する手順を示します。
+このレッスンでは、他のテストシナリオでも使えるように、認証状態を保存・再利用する方法を学びます。
 
-## 概要
-
-認証状態の保存、保存した状態を用いたテスト、describe レベルでの認証注入、複数コンテキストの並列実行、CI 運用上の注意点を扱います。
-
-## 準備: 保存ディレクトリの作成
+## 準備: ディレクトリの作成
 
 認証状態を保存するためにプロジェクトルートに `storage/` ディレクトリを作成します。
 
@@ -20,25 +16,38 @@ mkdir -p storage
 
 ## 認証状態を保存する（管理者アカウントの例）
 
-管理者でログインして storageState を保存するテストを作成します。以下はサンプルです。
+管理者でログインして storageState を保存するテストを作成します。
+
+新しく `tests/save-storage-state-admin.spec.ts` を作成し、以下のコードを追加します。
 
 ```typescript
-// tests/save-storage-state-admin.spec.ts
 import { test } from '@playwright/test';
 
 test('save admin storage state', async ({ browser }) => {
 	const context = await browser.newContext();
 	const page = await context.newPage();
 	await page.goto('http://localhost:5173');
+
 	await page.fill('[data-testid="username-input"]', 'admin');
 	await page.fill('[data-testid="password-input"]', 'password');
 	await page.click('[data-testid="login-button"]');
+
 	await context.storageState({ path: 'storage/admin.json' });
 	await context.close();
 });
 ```
 
 テストを実行して `storage/admin.json` が生成されていることを確認してください。同様に一般ユーザー用に `storage/user.json` を作成します。
+
+作成が完了したらLesson5で追加したログインコードをコメントアウトしておきます。
+
+```typescript
+// await page.fill('[data-testid="username-input"]', 'admin');
+// await page.fill('[data-testid="password-input"]', 'password');
+// await page.click('[data-testid="login-button"]');
+```
+
+次のコマンドを実行して、ファイルを生成します。
 
 ```bash
 npx playwright test tests/save-storage-state-admin.spec.ts
@@ -81,9 +90,3 @@ test.describe('as admin', () => {
 	});
 });
 ```
-
-## CI と運用上の注意
-
-- `storage/*.json` は認証情報を含む可能性があるため、公開リポジトリにコミットしないでください。
-- CI では、`storage` ファイルをシークレットやアーティファクトで渡すか、ワークフロー内でテスト開始前に再生成する方法を検討してください。
-- 有効期限のあるセッションを使う場合は、テストの前に有効性を検証し、必要なら再ログインするフローを用意してください。

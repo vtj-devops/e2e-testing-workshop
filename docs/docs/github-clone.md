@@ -9,8 +9,7 @@ sidebar_position: 4
 :::note
 この手順を始める前に、以下をご確認ください。
 
-- [Git公式](https://git-scm.com/)からGitがインストールされていること
-- [GitHub公式](https://docs.github.com/ja/get-started/start-your-journey/creating-an-account-on-github)を参考にGitHubアカウントを作成済みであること
+- Gitがインストールされていること([Git公式](https://git-scm.com/))
 
 :::
 
@@ -58,7 +57,3 @@ ls
 ```
 
 `<repository-name>`はクローンしたリポジトリの名前に置き換えてください。`ls`コマンドはmacOS/Linuxの場合で、Windowsでは`dir`コマンドを使用します。
-
-### 6. 次のステップ
-
-これでリポジトリのクローンが完了しました。次に、Node.jsのインストールとセットアップを行います。詳細は[インストール](installation.md)ページを参照してください。

@@ -8,7 +8,7 @@ sidebar_position: 5
 
 ## 手順
 
-1. `tests/example.spec.ts` で先に設定した `page.goto('http://localhost:5173')` の下に、フォーム操作を追加します。
+`tests/example.spec.ts` で先に設定した `page.goto(...)` の下に、フォーム操作を追加します。
 
 ```typescript
 // username と password を入力してログインボタンを押す
@@ -17,27 +17,29 @@ await page.fill('[data-testid="password-input"]', 'password');
 await page.click('[data-testid="login-button"]');
 ```
 
-2. アプリの挙動に合わせてログイン後のページ遷移や表示要素を検証するアサーションを追加するとより確実です。例:
+アサーションのテキストを変更すると、ログイン後の画面に切り替わったことを確認できます。
 
 ```typescript
 await expect(page.locator('text=ようこそ')).toBeVisible();
 ```
 
-3. サーバーを起動した状態でテストを実行します。
+コードの変更が終わったら、テストを実行して動作を確認します。
 
 ```bash
-npx playwright test
+npx playwright test --ui
 ```
 
 ![](img/009.png)
 
-## 補足
-- `data-testid` はテスト向けの識別子です。実装上の変更で壊れにくくするために便利です。
-- 入力やクリックの前に `await page.waitForSelector('[data-testid="username"]')` のように要素の存在を待つと安定します。
+## テスト用セレクタについて
+
+通常、IDやクラス名などを使って要素を特定することもありますが、これらはスタイル変更などで変わる可能性があり、テストが壊れやすくなります。また、テスト用途で依存することを避けるためにも、専用のセレクタを用意するのが望ましいです。
+
+専用セレクターとして、`data-testid` 属性を使うことが一般的です。ワークショップ用のアプリケーションでは、主要な要素に `data-testid` が設定されています。次のセクションで主なセレクタをまとめていますので、必要に応じて参照してください。
 
 ## テスト用セレクタ一覧
 
-ワークショップで使用する安定したセレクタをまとめます。テスト側ではこれらの `data-testid` を使って操作してください。
+ワークショップ用のアプリケーションで定義している主な `data-testid` セレクタは以下の通りです:
 
 - `data-testid="username-input"` — ログインフォームのユーザー名入力
 - `data-testid="password-input"` — ログインフォームのパスワード入力

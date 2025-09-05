@@ -29,7 +29,3 @@ npx playwright show-report
 ブラウザで開いたレポートから、各テストのステップ、スクリーンショット、トレースなど詳細を確認できます。
 
 ![](img/001.png)
-
-## 補足
-- テストを1ファイルだけ実行する場合: `npx playwright test tests/example.spec.ts`
-- UI（対話）モードやデバッグについては次のレッスンで説明します。
