@@ -6,6 +6,10 @@ sidebar_position: 3
 
 Playwrightは、Microsoftが開発しているエンドツーエンド（E2E）テスト用の自動化ライブラリです。モダンなブラウザ（Chromium、WebKit、Firefox）を直接操作して、実際のユーザー操作に近い形でWebアプリを検証できます。高速で信頼性が高く、ヘッドレス・ヘッドフルの両方で動作し、豊富なデバッグツールやCI向けの機能を備えています。
 
+:::note[生成AIでの活用について]
+最近では、MCP(Model Context Protocol)の登場により、GitHub Copilotなどの生成AIツールからPlaywrightを利用して、画面操作や情報取得を行う手法にも関心が集まっています。
+:::
+
 ## 特長
 
 - マルチブラウザ対応: Chromium, WebKit, Firefox をサポート
